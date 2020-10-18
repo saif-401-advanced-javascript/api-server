@@ -1,0 +1,56 @@
+{
+  "categories": [
+    {
+      "name": "Bags",
+      "display_name": "Bags",
+      "description": "Bags for humans to use",
+      "_id": 1
+    },
+    {
+      "name": "T-Shirts",
+      "display_name": "T-Shirts",
+      "description": "T-Shirts for humans",
+      "_id": 2
+    },
+    {
+      "name": "Shose",
+      "display_name": "Long Shose",
+      "description": "Shose for humans",
+      "_id": 3
+    },
+    {
+      "name": "Not Food",
+      "_id": 4
+    },
+    {
+      "name": "Home 2",
+      "_id": 5
+    },
+    {
+      "name": "Test1",
+      "_id": 6
+    },
+    {
+      "name": "Books",
+      "display_name": "Books",
+      "description": "Books for humans",
+      "_id": 8
+    }
+  ],
+  "products": [
+    {
+      "category": "T-Shirts",
+      "name": "Blue Very Short T-Shirt",
+      "display_name": "Dark blue",
+      "description": "Dark Blue T-shirt with different sizes",
+      "_id": 1
+    },
+    {
+      "category": "Books",
+      "name": "Human Books",
+      "display_name": "Book",
+      "description": "Books for human who can read",
+      "_id": 5
+    }
+  ]
+}
