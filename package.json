@@ -1,0 +1,33 @@
+{
+  "name": "api-server",
+  "version": "1.0.0",
+  "description": "Creating a server that provides a CRUD system using json-server package from npm.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saif-401-advanced-javascript/api-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saif-401-advanced-javascript/api-server/issues"
+  },
+  "homepage": "https://github.com/saif-401-advanced-javascript/api-server#readme",
+  "dependencies": {
+    "@types/jest": "^26.0.14",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "jest": "^26.5.3",
+    "supertest": "^5.0.0"
+  }
+}
