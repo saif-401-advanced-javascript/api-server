@@ -1,16 +1,18 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const categoriesModel = require('../lib/models/categories/catigories.models');
+const getModel = require('../middleware/model');
 
-router.get('/', getAll);
-router.post('/', insertNewHandler);
-router.get('/:id', getOneHandler);
-router.put('/:id', updateOneHandler);
-router.delete('/:id', deleteOneHandler);
+router.param('model', getModel);
 
-async function getAll(req, res, next) {
-  categoriesModel
+router.get('/:model', getAll);
+router.post('/:model', insertNewHandler);
+router.get('/:model/:id', getOneHandler);
+router.put('/:model/:id', updateOneHandler);
+router.delete('/:model/:id', deleteOneHandler);
+
+function getAll(req, res, next) {
+  req.model
     .read()
     .then((data) => {
       res.status(200);
@@ -23,7 +25,7 @@ async function getAll(req, res, next) {
 }
 
 function insertNewHandler(req, res, next) {
-  categoriesModel
+  req.model
     .create(req.body)
     .then((data) => {
       res.status(201);
@@ -33,7 +35,7 @@ function insertNewHandler(req, res, next) {
 }
 
 function getOneHandler(req, res, next) {
-  categoriesModel
+  req.model
     .read(req.params.id)
     .then((data) => {
       res.status(200);
@@ -43,7 +45,7 @@ function getOneHandler(req, res, next) {
 }
 
 function updateOneHandler(req, res, next) {
-  categoriesModel
+  req.model
     .update(req.params.id, req.body)
     .then((data) => {
       res.status(200);
@@ -56,7 +58,7 @@ function updateOneHandler(req, res, next) {
 }
 
 function deleteOneHandler(req, res, next) {
-  categoriesModel
+  req.model
     .delete(req.params.id, req.body)
     .then((data) => {
       res.status(200);

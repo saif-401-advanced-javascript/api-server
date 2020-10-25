@@ -24,9 +24,9 @@ describe('API Server Testing', () => {
     expect(products.body.results).toEqual([]);
     expect(categories.body.results).toEqual([]);
   });
-  it('should response with 404 if not found', () => {
+  it('should response with 500 if not found', () => {
     return mockRequest.get('/api/v1/foo').then((result) => {
-      expect(result.status).toBe(404);
+      expect(result.status).toBe(500);
     });
   });
   it('should response with 200 on a correct route products', async () => {
@@ -98,7 +98,6 @@ describe('API Server Testing', () => {
       .post('/api/v1/categories')
       .send(sendObjectCate)
       .then(async (result) => {
-        console.log('result', result.body);
         const updatedItem = await mockRequest
           .put(`/api/v1/categories/${result.body._id}`)
           .send({
